@@ -1,8 +1,8 @@
 import { prisma } from "../../db";
 import { MessageBody } from "./post.interface";
 
-function create(payload: MessageBody) {
-  prisma.post.create({
+async function create(payload: MessageBody) {
+  await prisma.post.create({
     data: {
       ...payload
     }
@@ -10,8 +10,8 @@ function create(payload: MessageBody) {
   return
 }
 
-function index() {
-  return prisma.post.findMany()
+async function index() {
+  return await prisma.post.findMany()
 }
 
 export default {
