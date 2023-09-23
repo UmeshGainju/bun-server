@@ -1,11 +1,11 @@
 import { MessageBody } from "./post.interface";
 import postRepository from "./post.repository";
 
-function add(body: MessageBody) {
-  return postRepository.create(body)
+async function add(body: MessageBody) {
+  return await postRepository.create(body)
 }
-function fetchAll() {
-  return postRepository.index()
+async function fetchAll() {
+  return await postRepository.index()
 }
 
 export default {
